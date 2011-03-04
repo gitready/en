@@ -1,34 +1,4 @@
 desc "deploy site to gitready.com"
-task :deploy do
-  require 'rubygems'
-  require 'highline/import'
-  require 'net/ssh'
-
-  regex = /refs\/heads\//
-  branches = []
-  `git ls-remote qrush`.split[2..-1].each do |l|
-    branches << l.gsub(regex, '') if l =~ regex
-  end
-
-  username = ask("Username:  ") { |q| q.echo = true }
-  password = ask("Password:  ") { |q| q.echo = "*" }
-
-  Net::SSH.start('gitready.com', username, :port => 1337, :password => password) do |ssh|
-    commands = "cd ~/gitready/cached-copy; git fetch;"
-    branches.each do |branch|
-
-      commands << <<EOF
-git reset --hard origin/#{branch}
-rm -rf ../#{branch}
-jekyll --no-auto ../#{branch}
-EOF
-    end
-      commands = commands.gsub(/\n/, "; ")
-      #puts commands
-      ssh.exec commands
-  end
-end
-
 desc "Unpublish all posts"
 task :unpublish do
   Dir["_posts/*.textile"].each do |post|
@@ -36,5 +6,22 @@ task :unpublish do
     lines = File.readlines(post)
     lines.insert(1, "published: false\n")
     File.open(post, "w") { |f| f.write lines.join }
+  end
+end
+
+LANGS = %w[de en es it nl pt-br ru sv]
+
+desc "setup all branches"
+task :setup do
+  LANGS.each do |lang|
+    system("git checkout -t -b #{lang} origin/#{lang}")
+    system("git remote add #{lang} git@github.com:gitready/#{lang}.git")
+  end
+end
+
+desc "publish to all branches"
+task :publish do
+  LANGS.each do |lang|
+    system("git push #{lang} #{lang}:gh-pages")
   end
 end
