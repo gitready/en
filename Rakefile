@@ -17,6 +17,7 @@ task :setup do
     system("git checkout -t -b #{lang} origin/#{lang}")
     system("git remote add #{lang} git@github.com:gitready/#{lang}.git")
   end
+  system("git checkout en")
 end
 
 desc "publish to all branches"
