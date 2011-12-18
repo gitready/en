@@ -6,8 +6,6 @@ category: advanced
 
 The "rebase":http://gitready.com/intermediate/2009/01/31/intro-to-rebase.html command has some awesome options available in its @--interactive@ (or @-i@) mode, and one of the most widely used is the ability to squash commits. What this does is take smaller commits and combine them into larger ones, which could be useful if you're wrapping up the day's work or if you just want to package your changes differently. We're going to go over how you can do this easily.
 
-p=. "!http://farm4.static.flickr.com/3073/2926413646_8e4a7b7db4.jpg?v=0!":http://flickr.com/photos/7552532@N07/2926413646/
-
 *A word of caution:* Only do this on commits that haven't been pushed an external repository. If others have based work off of the commits that you're going to delete, plenty of conflicts can occur. Just don't rewrite your history if it's been shared with others. 
 
 So let's say you've just made a few small commits, and you want to make one larger commit out of them. Our repository's history currently looks like this:
