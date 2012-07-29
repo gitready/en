@@ -9,7 +9,7 @@ task :unpublish do
   end
 end
 
-LANGS = %w[de en es fr it ja ko nl pt-br ru sv]
+LANGS = %w[de en es fr he it ja ko nl pt-br ru sv]
 
 desc "setup all branches"
 task :setup do
