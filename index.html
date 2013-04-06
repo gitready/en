@@ -1,14 +1,14 @@
 ---
 layout: default
-title: μάθετε το git με μία υποβολή τη φορά
+title: μάθε το git μία υποβολή τη φορά
 ---
 {% assign first_post = site.posts.first %}
 <div id="post" class="grid_6 alpha content">
   <h2><a href="{{ first_post.url }}">
-    το πιο νέο άρθρο: {{ first_post.title }}
+    το πιο πρόσφατο άρθρο: {{ first_post.title }}
   </a></h2>
   {{ first_post.content | truncate: 450 }}
-  <a id="more" href="{{ first_post.url }}">Διαβάστε Περισσότερα &raquo;</a>
+  <a id="more" href="{{ first_post.url }}">Διάβασε Περισσότερα &raquo;</a>
 </div>
 <div class="grid_2 omega">
   <h3 id="purple">πρόσφατα άρθρα</h3>
