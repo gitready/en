@@ -2,7 +2,7 @@
 published: false
 layout: post
 title: αποθήκευσε τα stashes έξυπνα
-category: Για αρχάριους
+category: για αρχάριους
 ---
 
 Φαίνεται ότι χρησιμοποιώ το "stashing":http://gitready.com/beginner/2009/01/10/stashing-your-changes.html όλο και περισσότερο, και έχω διαπιστώσει ότι δεν είναι και τόσο χρήσιμο να βλέπω το αποτέλεσμα του stash list έτσι:
