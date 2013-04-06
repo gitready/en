@@ -24,19 +24,19 @@
       {{ content }}
     </div> 
     <div class="grid_2 prefix_2 links">
-      <h3 id="green">Βασικά</h3>
+      <h3 id="green">Για αρχάριους</h3>
       {% for post in site.categories.beginner %}
         <a href="{{ post.url }}">{{ post.title }}</a>
       {% endfor %}
     </div>
     <div class="grid_2 links">
-      <h3 id="yellow">Ενδιάμεσα</h3>
+      <h3 id="yellow">Μέσο επίπεδο</h3>
       {% for post in site.categories.intermediate %}
         <a href="{{ post.url }}">{{ post.title }}</a>
       {% endfor %}
     </div>
     <div class="grid_2 links">
-      <h3 id="red">Προχωρημένα</h3>
+      <h3 id="red">Για προχωρημένους</h3>
       {% for post in site.categories.advanced %}
         <a href="{{ post.url }}">{{ post.title }}</a>
       {% endfor %}
