@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: pushing and pulling
 category: beginner

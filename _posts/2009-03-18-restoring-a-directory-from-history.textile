@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: restoring a directory from history
 category: intermediate

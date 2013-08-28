@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: squashing commits with rebase
 category: advanced

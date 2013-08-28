@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: convert git-svn tag branches to real tags
 category: advanced

@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: helpful command aliases
 category: intermediate

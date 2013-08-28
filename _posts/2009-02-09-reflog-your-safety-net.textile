@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: reflog, your safety net
 category: intermediate

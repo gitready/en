@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: push to only bare repositories
 category: advanced

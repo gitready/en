@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: push and delete remote branches
 category: beginner

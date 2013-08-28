@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: easily manage git remote branches
 category: advanced

@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: bend logs to your will
 category: advanced

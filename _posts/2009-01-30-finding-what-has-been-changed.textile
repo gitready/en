@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: finding what has been changed
 category: intermediate

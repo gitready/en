@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: rolling back changes with revert
 category: intermediate

@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: what's inside your .git directory
 category: advanced
