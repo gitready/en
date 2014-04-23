@@ -4,8 +4,6 @@ title: "ribbon/catchup: reading new commits"
 category: advanced
 ---
 
-p=. This is a guest post from "Jo Liss":http://www.solitr.com/.
-
 I picked up this trick to use Git as a kind of feed-reader on "Moro's blog":http://d.hatena.ne.jp/moro/20110719/1311048331, so I thought I'd share it here:
 
 Let's say you want to stay up-to-date with a project - for example, an upstream repository you are contributing to, a smart developer you are trying to learn from, or an awesome library you'd just like to watch. How do you go about following the commits that are being pushed?
@@ -36,4 +34,4 @@ Sweet, isn't it?
 
 By the way: If you do not like to read the individual commits in topic branches that were merged into @origin/master@, consider adding @--first-parent -m@ to the catchup log command.
 
-p(((. <i>Jo Liss "blogs about Rails":http://www.solitr.com/blog/ and makes voting software at "VSO":http://www.votingsoftware.org/. </i>
+p(((. <i>This is a guest post from "Jo Liss":https://twitter.com/jo_liss. Jo likes JavaScript and created a "solitaire game":http://www.solitr.com/. </i>
