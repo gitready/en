@@ -1,9 +1,8 @@
 ---
-layout: nil
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
+
  <title>Git Ready</title>
  <link href="http://gitready.com/atom.xml" rel="self"/>
  <link href="http://gitready.com/"/>
@@ -23,5 +22,5 @@ layout: nil
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
- 
+
 </feed>
