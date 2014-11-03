@@ -1,0 +1,64 @@
+---
+layout: post
+title: "gpg-sign releases"
+category: advanced
+---
+
+As a developer you use code written by other people _all the time_. To keep upstream changes from breaking your code, you depend on release numbers. Libraries like "bootstrap":https://github.com/twbs/bootstrap use "git tags":http://gitready.com/beginner/2009/02/03/tagging.html to track releases and make them available for download.
+
+This strategy is common enough that GitHub has a handy release page right "here":https://github.com/twbs/bootstrap/releases/tag/v3.3.0 to download the zip/tar.gz of the tag you need.
+
+You have the tarball, but are you sure you have the right code? Could the NSA have tampered with it? Could your internet service provider? Could GitHub? That release passes through many hands between the developer's hard drive and yours.
+
+Well what if we cloned the repo directly? Commits are all hashed, and you can examine the history.
+
+<pre>
+$ git clone --branch v3.3.0 https://github.com/twbs/bootstrap
+</pre>
+
+Unfortunately, this very site can tell you how to "alter git history":http://localhost:4000/intermediate/2009/01/31/intro-to-rebase.html. Someone sneaky could hide a malicious change in the project history. Luckily, git can help. Signed tags use "Gnu Privacy Guard":https://www.gnupg.org/ to verify that a tag was made by the developers of the project, and that the contents are correct.
+
+<pre>
+$ cd bootstrap
+$ git tag --verify v3.3.0
+error: 16dbdbd7a2c6cfa3be4e5dcc52249e577c02c84a: cannot verify a non-tag object of type commit.
+error: could not verify the tag 'v3.3.0'
+</pre>
+
+Dang, doesn't look like bootstrap signs their tags. Let's try a project that does sign their tags.
+
+<pre>
+$ git clone --branch v1.0.0 https://github.com/hudl/fargo
+$ git tag --verify v1.0.0
+object 5f63bca56a2f0268e5934655279dc8705fae4079
+type commit
+tag v1.0.0
+tagger Ryan S. Brown <sb@ryansb.com> 1403217530 -0500
+
+Add DNS discovery for Eureka
+gpg: Signature made Thu 19 Jun 2014 06:41:01 PM EDT using RSA key ID 7907CCDB
+gpg: Good signature from "Ryan Scott Brown (ryansb) <ryansb@csh.rit.edu>"
+gpg:                 aka "Ryan Scott Brown (ryansb) <sb@ryansb.com>"
+</pre>
+
+Neat, now you can see the key fingerprint it was signed with, check that the key is valid. Search "pgp.mit.edu":http://pgp.mit.edu/pks/lookup?search=ryansb%40csh.rit.edu&op=vindex for the email address and compare the key ID to confirm that it's signed by the right person.
+
+*Note: Version "1.7.9":https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/1.7.9.txt introduced the ability to sign commits as well as tags.*
+
+To sign tags on your own project, you'll need a GPG key of your own. Head over to "this tutorial":http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.1 to get set up if you don't already have a key. If you have multiple keys, you need to configure your signing key.
+
+<pre>
+git config --global user.signingkey you@email.domain
+</pre>
+
+Now you can make a release as normal, but with a signed commit.
+
+<pre>
+git tag -s v0.1 -m "the best version yet"
+</pre>
+
+The only difference here is the @-s@. Before you upload the tag be sure to check your signature with @git tag --verify v0.1@.
+
+If your project has multiple developers there are a few ways to handle signing releases. The project can have a release-signing key with subkeys for each developer, or developers can use their personal key. Both of these work, but document which method you choose. Users need to know what to expect when they check the release signature.
+
+Just signing releases is a great start, but they aren't any good if your users don't check them. Make sure to put a note in your @README@ that you sign releases, and where to find the public key your project uses.
