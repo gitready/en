@@ -4,6 +4,8 @@ title: "gpg-sign releases"
 category: advanced
 ---
 
+This is a guest post from "Ryan Brown.":http://rsb.io/
+
 As a developer you use code written by other people _all the time_. To keep upstream changes from breaking your code, you depend on release numbers. Libraries like "bootstrap":https://github.com/twbs/bootstrap use "git tags":http://gitready.com/beginner/2009/02/03/tagging.html to track releases and make them available for download.
 
 This strategy is common enough that GitHub has a handy release page right "here":https://github.com/twbs/bootstrap/releases/tag/v3.3.0 to download the zip/tar.gz of the tag you need.
@@ -16,7 +18,7 @@ Well what if we cloned the repo directly? Commits are all hashed, and you can ex
 $ git clone --branch v3.3.0 https://github.com/twbs/bootstrap
 </pre>
 
-Unfortunately, this very site can tell you how to "alter git history":http://localhost:4000/intermediate/2009/01/31/intro-to-rebase.html. Someone sneaky could hide a malicious change in the project history. Luckily, git can help. Signed tags use "Gnu Privacy Guard":https://www.gnupg.org/ to verify that a tag was made by the developers of the project, and that the contents are correct.
+Unfortunately, this very site can tell you how to "alter git history":http://gitready.com/intermediate/2009/01/31/intro-to-rebase.html. Someone sneaky could hide a malicious change in the project history. Luckily, git can help. Signed tags use "Gnu Privacy Guard":https://www.gnupg.org/ to verify that a tag was made by the developers of the project, and that the contents are correct.
 
 <pre>
 $ cd bootstrap
