@@ -43,9 +43,12 @@ gpg: Good signature from "Ryan Scott Brown (ryansb) <ryansb@csh.rit.edu>"
 gpg:                 aka "Ryan Scott Brown (ryansb) <sb@ryansb.com>"
 </pre>
 
-Neat, now you can see the key fingerprint it was signed with, check that the key is valid. Search "pgp.mit.edu":http://pgp.mit.edu/pks/lookup?search=ryansb%40csh.rit.edu&op=vindex for the email address and compare the key ID to confirm that it's signed by the right person.
+Neat, now you can see the key fingerprint it was signed with, check that the key is valid. The simplest way is to search "pgp.mit.edu":http://pgp.mit.edu/pks/lookup?search=ryansb%40csh.rit.edu&op=vindex for the email address and compare the key ID to confirm that it's signed by the right person. You can't totally trust this method, as *anyone* can upload any key, but it's better (in theory) than downloading unsigned code. It's best to verify the key through the GPG web of trust, in person, through another secure medium, or a combination of these methods. The more verification you can get, the more you can trust the integrity of the signed tag.
 
 *Note: Version "1.7.9":https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/1.7.9.txt introduced the ability to sign commits as well as tags.*
+
+
+<h2>How can you sign your releases?</h2>
 
 To sign tags on your own project, you'll need a GPG key of your own. Head over to "this tutorial":http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.1 to get set up if you don't already have a key. If you have multiple keys, you need to configure your signing key.
 
