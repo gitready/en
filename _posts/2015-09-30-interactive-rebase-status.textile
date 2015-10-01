@@ -4,7 +4,7 @@ title: "interactive rebase status"
 category: intermediate
 ---
 
-With "git 2.6": https://github.com/git/git/blob/v2.6.0/Documentation/RelNotes/2.6.0.txt it's now easier than ever to keep track of your work during an interactive rebase.
+With "git 2.6":https://github.com/git/git/blob/v2.6.0/Documentation/RelNotes/2.6.0.txt it's now easier than ever to keep track of your work during an interactive rebase.
 
 Previously, if you were rebasing interactively and had hit a conflict or stopped to reword a commit, git status would look like this:
 
@@ -16,7 +16,7 @@ You are currently rebasing branch 'testbranch' on '0927cd6'.
   (fix conflicts and then run "git rebase --continue")
 </pre>
 
-This only tells you what branch you started with and the target of your rebase. If you want to get information about which commit you'vestopped on, you need to turn to <pre>git log</pre>.
+This only tells you what branch you started with and the target of your rebase. If you want to get information about which commit you'vestopped on, you need to turn to "git log".
 
 With the release of 2.6, git status now produces much more helpful output that *reminds you what you were doing*. It includes which rebase commands have finished already, and what's still left to do.
 
